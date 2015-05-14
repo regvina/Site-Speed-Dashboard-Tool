@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <title>Site Speed Dashboard Tool</title>
+    <!--<header><link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico"></html></header>-->
+       
+     <div id="header" style="textdecoration:blink">
+      	<div id="Logo" style="float: left !important">
+             <img src="Icon.png"
+                  width="75" 
+                  height="75"
+                  align=middle 
+                  alt="Logo" />
+         </div>
+       <h1 align="center" class="fluid header" style="fontsize:48px; fontstyle:normal; color:#1D009C;" > Site Speed Dashboard Tool</h1>
+</div>
+     <!--<div id="Environment" class="fluid Left_Menu" style="textalign:center">
+     	<span style="textalign:center">
+         	<b>Select an Environment:</b>
+         </span>
+         <span style="textalign:center">
+             <select name="Environment" onchange="location=this.options[this.selectedIndex].value;"> "Select an Environment"
+              	<option value="Index_Prod.php" selected>Prod</option>
+              	<option value="Index_QA.php">QA</option>
+              </select>
+          </span>
+      </div>-->
+      <!--<link href="jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+      <link href="jquery.ui.theme.min.css" rel="stylesheet" type="text/css"> -->
+      <!--<link href="jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css"> -->
+      <!--<link rel="stylesheet" href="/jqueryui1.11.0.custom/jqueryui.css">-->
+      <!--<link rel="stylesheet" href="/resources/demos/style.css"> -->
+     <!-- <link rel="stylesheet" type="text/css" href="/datetimepickermaster/datetimepickermaster/jquery.datetimepicker.css"/ >
+      <script src="/datetimepickermaster/datetimepickermaster/jquery.js"> </script>
+      <script src="/datetimepickermaster/datetimepickermaster/jquery.datetimepicker.js"></script> -->
+      <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+      <script src="http://code.highcharts.com/highcharts.js"></script>
+	  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+      <div id="container" style=" left: 250px; width: 1000px; height: 550px; top: 25px; position:relative">
+      	<script type="text/javascript">
+         $(function () {
+          	$('#container').highcharts({
+             	/*chart: {
+                	renderTo: 'container',
+                    type: 'line',
+                    marginRight: 130,
+                    marginBottom: 25
+                 }, */
+                  title: {
+                        text: 'Page OnLoad Time',
+                        x: 20 //center
+                  },
+                  subtitle: {
+                        text: 'Page OnLoad Time V/S TimeStamp',
+                        x: 20
+                  },
+                  xAxis: {
+                        categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri','Sat']
+                  },
+                    
+                  yAxis: {
+                        title: {
+                        	text: 'Time in miliseconds(ms)'
+                  },
+                  plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                        }]
+                  },
+                  tooltip: {
+                        valueSuffix: 'ms'
+                  },
+                  legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'top',
+                        x: 10,
+                        y: 100,
+                        borderWidth: 0
+                  },
+                    series: [{
+						name: 'Home Page',
+						data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        			}, {
+					   name: 'Search Page',
+					   data: [0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+					}, {
+					   name: 'About Us',
+					   data: [0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+					}, {
+					   name: 'Contact Us',
+					   data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        			}]
+   
+				});
+			});
+            </script>
+        
+    </div>
+   <!-- <script src="http://code.jquery.com/jquery1.7.1.min.js" type="text/javascript" > </script> -->
+
+    <!--<script type="text/javascript">
+        $(function() {
+            $("#data_from").datetimepicker({
+            format:'Ymd
+            H:i:s',
+            });
+        });
+        $(function() {
+            $("#data_to").datetimepicker({
+            format:'Ymd
+            H:i:s',
+            });
+        });
+
+</script>-->
+    <style>
+        a:link {
+            textdecoration:
+            none;
+        }
+        a:visited {
+            textdecoration:
+            none;
+        }
+        a:hover {
+            textdecoration:
+            underline;
+        }
+        a:active {
+            textdecoration:
+            underline;
+        }
+    </style>
+
+    <body>
+        <div id = "Calendar 1" style = "top: 150px; float:left; left: 5px; position: absolute;  width: 230px;backgroundcolor:#99E8EF"> 
+            <div id="date_selection">
+                <form method="post" id="calanderForm" action="#">
+                <!<form method="post" action="
+                    <div id="Start Date/Time:">
+                        <p>
+                            <span style="color: #000000;
+                                         fontsize:12px;
+                                         fontfamily:Gotham, 'Helvetica Neue',Helvetica, Arial, sansserif;">
+                            <strong>Start Date/Time:</span></strong>
+                            <input type="text" id="data_from" name="data_from">
+                  </p>
+                  </div>
+
+                    <div id="End Date/Time:">
+                        <p><span style="color: #000000; 
+                                        fontsize:12px; 
+                                        fontfamily: Gotham, 'Helvetica Neue', Helvetica, Arial, sansserif;">
+                        <strong>End Date/Time:</span></strong>
+                  <input type="text" id="data_to" name="data_to"></div>
+                        <span style="textalign:center"></span></p>
+                    </div>
+
+                    <div id="Submit_Button" style="verticalalign:middle;
+                                                   aligncontent:center; 
+                                                   textalign: center;">
+                        <input type="submit" name="submit" id="submit" value="Submit">
+                        </span>
+                    </div> </div></form>
+                </form>
+                <div id="menu" style= "float:left;
+                                       top: 150px;
+                                       left: 5px; 
+                                       height: 275px; 
+                                       width: 230px;
+                                       backgroundcolor:#99E8EF;
+                                       fontsize:13px; 
+                                       fontfamily:Gotham,'Helvetica Neue', Helvetica,Arial, sansserif;
+                                       fontstyle:normal; 
+                                       fontweight:normal;"> 
+                
+                    <div id="Home Page">
+                        <a href="eBay_mWeb_Page.php"><br> Home Page</br>
+                        </a>
+                    </div>
+                    
+                    <div id="Search Page">&nbsp;
+                        <a href="My_eBay_Page.php"> <br>Search Page</br>
+                        </a>
+                    </div>
+        
+                    <div id="About Us">
+                        <br>
+                        <a href="Search_Page.php">About Us Page</br>
+                        </a>
+                    </div>
+    
+                    <div id="Contact Us">
+                        <br>
+                        <a href="View_Page.php">Contact Us Page</br>
+                        </a>
+                    </div>
+            </div>
+            <p style="fontsize:10px;">
+            </p>
+    </body>
+</html>
